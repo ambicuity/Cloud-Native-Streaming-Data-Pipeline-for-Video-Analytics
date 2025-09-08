@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Analytics Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "timestamp",
+    "video_source",
+    "event_type",
+    "data"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Unique identifier for the event"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the event occurred"
+    },
+    "video_source": {
+      "type": "object",
+      "required": ["source_id", "camera_id"],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "description": "Unique identifier for the video source"
+        },
+        "camera_id": {
+          "type": "string",
+          "description": "Camera or device identifier"
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "latitude": {"type": "number"},
+            "longitude": {"type": "number"},
+            "address": {"type": "string"}
+          }
+        }
+      }
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "motion_detected",
+        "person_detected",
+        "vehicle_detected",
+        "anomaly_detected",
+        "performance_metric",
+        "system_event"
+      ],
+      "description": "Type of analytics event"
+    },
+    "data": {
+      "type": "object",
+      "description": "Event-specific data payload",
+      "properties": {
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence score for detection events"
+        },
+        "bounding_box": {
+          "type": "object",
+          "properties": {
+            "x": {"type": "number"},
+            "y": {"type": "number"},
+            "width": {"type": "number"},
+            "height": {"type": "number"}
+          }
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": {"type": "number"}
+        },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "processing_metadata": {
+      "type": "object",
+      "properties": {
+        "pipeline_version": {"type": "string"},
+        "processing_time": {"type": "string", "format": "date-time"},
+        "model_version": {"type": "string"}
+      }
+    }
+  }
+}
