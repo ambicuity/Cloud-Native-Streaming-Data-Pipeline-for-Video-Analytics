@@ -1,0 +1,26 @@
+# Apache Beam and Google Cloud
+apache-beam[gcp]==2.52.0
+google-cloud-pubsub==2.18.4
+google-cloud-monitoring==2.16.0
+google-cloud-logging==3.8.0
+google-cloud-storage==2.10.0
+
+# Data processing and validation
+pandas==2.1.3
+jsonschema==4.19.2
+pydantic==2.5.0
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+mock==5.1.0
+
+# Utilities
+python-dotenv==1.0.0
+click==8.1.7
+pyyaml==6.0.1
+
+# Development
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
