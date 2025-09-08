@@ -5,17 +5,17 @@ A comprehensive, enterprise-scale streaming data pipeline built on Google Cloud 
 ## 📸 Screenshots - Pipeline in Action
 
 ### Google Cloud Dataflow Job Running
-![Dataflow Job Running](https://github.com/user-attachments/assets/c034193f-e16b-4a54-ad5a-e7c434afdc7b)
+![Dataflow Job Running](screenshots/dataflow_job_running.png)
 
 *The Dataflow job console showing the video analytics pipeline processing 8,247 elements per second with 5 active workers and 99.7% success rate. Real-time metrics display throughput, latency, and worker status.*
 
 ### Pub/Sub Topics Processing Messages
-![Pub/Sub Topics](https://github.com/user-attachments/assets/97e9f519-2a67-4d36-b256-6541cf17fa93)
+![Pub/Sub Topics](screenshots/pubsub_topics.png)
 
 *Active Pub/Sub topics showing real-time message processing across input, output, anomalies, and analytics streams. The pipeline processes over 15k messages daily with consistent throughput.*
 
 ### CLI Pipeline Startup and Health Monitoring
-![CLI Output](https://github.com/user-attachments/assets/1331a121-9323-4014-bc25-81bcc7c6c31d)
+![CLI Output](screenshots/cli_output.png)
 
 *Command-line interface showing successful pipeline startup, job submission to Dataflow, and comprehensive health monitoring across all components. The pipeline achieves sub-second processing with excellent reliability.*
 
